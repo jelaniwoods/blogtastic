@@ -10,9 +10,11 @@ CREATE TABLE users (
     pass varchar(40) NOT NULL,
     UNIQUE(id)
 );
+INSERT INTO users (id, username, pass) VALUES
+(1, "xtian", "123456");
 
 DROP TABLE IF EXISTS list;
-CREATE TABLE users (
+CREATE TABLE list (
     id int(11) AUTO_INCREMENT PRIMARY KEY,
     details text NOT NULL,
     date_posted varchar(30) NOT NULL,
