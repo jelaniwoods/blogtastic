@@ -1,21 +1,25 @@
 -- setup all tables and db
-CREATE DATABASE blogtastic
+DROP DATABASE IF EXISTS blogtastic;
+CREATE DATABASE blogtastic;
+USE blogtastic;
 
-DROP TABLE IF EXISTS 'article';
-CREATE TABLE `article` (
-    `article_id` int(5) NOT NULL auto_increment,
-    `name` varchar(255) NOT NULL default ”,
-    `title` varchar(255) NOT NULL default ”,
-    `comments` text NOT NULL,
-    `date_posted` date NOT NULL default ‘0000-00-00’,
-    `categoryID` int(4) NOT NULL default ‘0’,
-    `article_child` int(5) NOT NULL default ‘0’,
-    PRIMARY KEY (`artid`)
-) TYPE = MyISAM AUTO_INCREMENT = 30 ;
+DROP TABLE IF EXISTS users;
+CREATE TABLE users (
+    id int(11) AUTO_INCREMENT PRIMARY KEY,
+    username varchar(40) NOT NULL,
+    pass varchar(40) NOT NULL,
+    UNIQUE(id)
+);
 
-DROP TABLE IF EXISTS 'categories';
-CREATE TABLE `categories` (
-    `category_id` int(5) NOT NULL auto_increment,
-    `category` varchar(255) NOT NULL default ”,
-    PRIMARY KEY (`catid`)
-) TYPE = MyISAM AUTO_INCREMENT = 3 ;
+DROP TABLE IF EXISTS list;
+CREATE TABLE users (
+    id int(11) AUTO_INCREMENT PRIMARY KEY,
+    details text NOT NULL,
+    date_posted varchar(30) NOT NULL,
+    time_posted Time NOT NULL,
+    date_edited varchar(30) NOT NULL,
+    time_edited time NOT NULL,
+    public varchar(5) NOT NULL,
+    UNIQUE(id)
+);
+
