@@ -16,5 +16,17 @@
         </li>
     </ul>
     
+    <?php
+		$con = mysqli_connect("localhost", "root","root", "blogtastic") or die(mysqli_error()); //Connect to server
+		$query = mysqli_query($con, "Select * from list Where public='yes'"); // SQL Query
+        while($row = mysqli_fetch_array($query)) {
+    		Print "<tr>";
+			Print '<td align="center">'. $row['id'] . "</td>";
+            Print '<td align="center">'. $row['details'] . "</td>";
+            Print '<td align="center">'. $row['date_posted']. " - ". $row['time_posted']."</td>";
+			Print '<td align="center">'. $row['date_edited']. " - ". $row['time_edited']. "</td>";
+			Print "</tr>";
+        }
+	?>
 </body>
 </html>

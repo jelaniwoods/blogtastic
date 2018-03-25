@@ -8,11 +8,11 @@
 </head>
 <body>
     <h2>Login Page</h2>
-    <a href="index.php">Click here to go back<br/><br/>
-    <form action="checklogin.php" method="POST">
-       Enter Username: <input type="text" name="username" required="required" /> <br/>
-       Enter password: <input type="password" name="password" required="required" /> <br/>
-       <input type="submit" value="Login"/>
+    <a href="index.php">Click here to go back<br/><br/> </a>
+    <form action="checklogin.php" method="post">
+        <label for="username">Username</label> <input type="text" name="username" placeholder="username">
+        <label for="pass">Password</label> <input type="password" name="pass" placeholder="password">
+        <input type="submit" value="Register">
     </form>
 </body>
 </html>
