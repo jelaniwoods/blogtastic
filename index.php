@@ -15,7 +15,17 @@
             <a href="register.php">Register</a>
         </li>
     </ul>
-    
+</body>
+    <br/>
+	<h2 align="center">List</h2>
+	<table width="100%" border="1px">
+			<tr>
+				<th>Id</th>
+				<th>Details</th>
+				<th>Post Time</th>
+				<th>Edit Time</th>
+			</tr>
+
     <?php
 		$con = mysqli_connect("localhost", "root","root", "blogtastic") or die(mysqli_error()); //Connect to server
 		$query = mysqli_query($con, "Select * from list Where public='yes'"); // SQL Query
@@ -28,5 +38,6 @@
 			Print "</tr>";
         }
 	?>
-</body>
+        </table>
+
 </html>
